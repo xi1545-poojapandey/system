@@ -1,0 +1,3 @@
+spring:
+  application:
+      name: automatic-irrigation-system-service
