@@ -4,7 +4,9 @@ import automatic.irrigation.system.dto.PlotConfigurationRequest;
 import automatic.irrigation.system.dto.PlotRequest;
 import automatic.irrigation.system.dto.SlotRequest;
 import automatic.irrigation.system.entity.Plot;
+import automatic.irrigation.system.entity.PlotSlots;
 import automatic.irrigation.system.entity.Slot;
+import automatic.irrigation.system.enums.SlotStatus;
 
 import java.time.LocalDateTime;
 
@@ -46,4 +48,13 @@ public class TestHelper {
         plotConfigurationRequest.setSlotId(1l);
         return plotConfigurationRequest;
 
-    }}
+
+    }
+
+    public static PlotSlots createPlotSlots() {
+        PlotSlots plotSlots= new PlotSlots();
+        plotSlots.setSlotStatus(SlotStatus.IRRIGATION_REQUIRED);
+        plotSlots.setPlotId(1);
+        return plotSlots;
+    }
+}

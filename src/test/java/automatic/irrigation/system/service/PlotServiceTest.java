@@ -1,7 +1,10 @@
 package automatic.irrigation.system.service;
 
 import automatic.irrigation.system.TestHelper;
+import automatic.irrigation.system.dto.PlotConfigurationResponse;
 import automatic.irrigation.system.entity.Plot;
+import automatic.irrigation.system.entity.PlotSlots;
+import automatic.irrigation.system.entity.Slot;
 import automatic.irrigation.system.mapper.PlotMapper;
 import automatic.irrigation.system.repository.PlotRepository;
 import automatic.irrigation.system.repository.PlotsSlotsRepository;
@@ -56,12 +59,19 @@ public class PlotServiceTest {
         assertNotNull(plotResponse);
     }
 
- /*   @Test
+ @Test
     public void test_configure_plot(){
-        when(plotRepository.findAllById(any())).thenReturn(TestHelper.createPlotList());
-        PlotConfigurationResponse plotConfigurationResponse=plotServiceImpl.configurePlot(1l,TestHelper.createPlotConfigurationRequest());
+        Plot plot=TestHelper.createPlot();
+        Slot slot= TestHelper.createSlot();
+     PlotSlots plotSlots=TestHelper.createPlotSlots();
+        when(plotRepository.findById(any())).thenReturn(java.util.Optional.of(plot));
+        when(slotRepository.findById(any())).thenReturn(java.util.Optional.of(slot));
+     when(plotRepository.save(any())).thenReturn(plot);
+     when(plotsSlotsRepository.save(any())).thenReturn(plotSlots);
+     PlotConfigurationResponse plotConfigurationResponse=plotServiceImpl.configurePlot(1l,TestHelper.createPlotConfigurationRequest());
+     assertNotNull(plotConfigurationResponse);
 
-    }*/
+    }
 
 
 }
