@@ -1,11 +1,14 @@
-package automatic.irrigation.system.domain;
+package automatic.irrigation.system.dto;
+
 
 import lombok.Builder;
 import lombok.Data;
 
-@Data
+
 @Builder
-public class PlotRequest {
+@Data
+public class PlotsResponse {
+
     private String plotName;
 
     private long plotId;
